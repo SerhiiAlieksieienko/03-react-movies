@@ -33,7 +33,7 @@ export default function App() {
         toast.error("No movies found for your request.");
       }
       setMovies(fetchedMovies);
-    } catch (err) {
+    } catch  {
       setError(true);
     } finally {
       setLoading(false);
