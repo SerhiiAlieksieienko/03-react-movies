@@ -9,7 +9,7 @@ interface FetchMovies {
 }
 
 export async function fetchMovies(query: string): Promise<Movie[]> {
-  const token = import.meta.env.VITE_TMDB_TOKEN;
+  const myKey = import.meta.env.VITE_API_KEY;
 
   const response = await axios.get<FetchMovies>(
     `https://api.themoviedb.org/3/search/movie`,
@@ -19,7 +19,7 @@ export async function fetchMovies(query: string): Promise<Movie[]> {
         page: 1,
       },
       headers: {
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${myKey}`,
       },
     }
   );
